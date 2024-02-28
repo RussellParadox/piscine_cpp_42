@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 14:29:46 by gdornic           #+#    #+#             */
-/*   Updated: 2024/02/28 11:21:31 by gdornic          ###   ########.fr       */
+/*   Created: 2024/02/27 14:28:07 by gdornic           #+#    #+#             */
+/*   Updated: 2024/02/28 10:55:58 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name)
+int	main(void)
 {
-	Zombie	*new_zombie;
+	Zombie	*horde;
+	int		n;
 
-	new_zombie = new Zombie(name);
-	if (new_zombie == NULL)
-		return (NULL);
-	return (new_zombie);
+	n = 5;
+	horde = zombieHorde(n, "A zombie with no name");
+	if (horde == NULL)
+		return (1);
+	for (int i = 0; i < n; i++)
+		horde[i].announce();
+	delete[] horde;
+	return (0);
 }
