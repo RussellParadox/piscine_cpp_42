@@ -6,12 +6,13 @@
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:16:03 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/04 14:27:52 by gdornic          ###   ########.fr       */
+/*   Updated: 2024/03/06 09:05:43 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+# include <iostream>
 
 class Fixed
 {
@@ -36,6 +37,24 @@ class Fixed
 
 		//Set value
 		void setRawBits(int const raw);
+
+		//Parametized constructor: int
+		Fixed(const int n);
+
+		//Parametized constructor: float
+		Fixed(const float f);
+
+		//Convert fixed to float
+		float	toFloat(void) const;
+
+		//Convert fixed to int
+		int	toInt(void) const;
+
+		//Print function for ostream
+		std::ostream	&print(std::ostream &os) const;
 };
+
+//Insertion operator overload
+std::ostream	&operator<<(std::ostream &os, const Fixed &obj);
 
 #endif
