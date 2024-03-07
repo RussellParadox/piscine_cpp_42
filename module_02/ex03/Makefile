@@ -6,11 +6,11 @@
 #    By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/23 21:58:09 by gdornic           #+#    #+#              #
-#    Updated: 2024/03/02 16:00:13 by gdornic          ###   ########.fr        #
+#    Updated: 2024/03/06 13:01:18 by gdornic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = BSP
 
 DEP = $(addprefix dep/, )
 
@@ -18,7 +18,7 @@ HEADERS = $(addprefix -I, $(DEP)) -Iinclude
 
 LIB_LINK = $(addprefix -L, $(DEP))
 
-SRC = main.cpp Harl.cpp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ = $(addprefix obj/, $(SRC:.cpp=.o))
 
