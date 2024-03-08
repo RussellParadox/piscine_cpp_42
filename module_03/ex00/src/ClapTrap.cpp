@@ -6,7 +6,7 @@
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:35:29 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/08 09:17:58 by gdornic          ###   ########.fr       */
+/*   Updated: 2024/03/08 10:58:51 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 ClapTrap::ClapTrap(): _name("No_name"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
+	std::cout << "ClapTrap default constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other): _name(other._name), _hit_points(other._hit_points), _energy_points(other._energy_points), _attack_damage(other._attack_damage)
 {
+	std::cout << "ClapTrap copy constructor called." << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
@@ -36,10 +38,12 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "ClapTrap destructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
+	std::cout << "ClapTrap name constructor called." << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
@@ -73,6 +77,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << _name << " recover " << amount << " hit points!" << std::endl;
 		_hit_points += amount;
+		_energy_points--;
 	}
 	else
 		std::cout << "ClapTrap " << _name << " can't repair himself." << std::endl;

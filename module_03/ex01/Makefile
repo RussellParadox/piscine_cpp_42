@@ -6,11 +6,11 @@
 #    By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/23 21:58:09 by gdornic           #+#    #+#              #
-#    Updated: 2024/03/07 13:34:41 by gdornic          ###   ########.fr        #
+#    Updated: 2024/03/08 09:25:22 by gdornic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Aaaaand_OPEN
+NAME = Serena_my_love
 
 DEP = $(addprefix dep/, )
 
@@ -18,7 +18,7 @@ HEADERS = $(addprefix -I, $(DEP)) -Iinclude
 
 LIB_LINK = $(addprefix -L, $(DEP))
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(addprefix obj/, $(SRC:.cpp=.o))
 

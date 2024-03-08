@@ -6,7 +6,7 @@
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:34:52 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/07 14:03:19 by gdornic          ###   ########.fr       */
+/*   Updated: 2024/03/08 10:40:54 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		_name;
 		unsigned int	_hit_points;
 		unsigned int	_energy_points;
