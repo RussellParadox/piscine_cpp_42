@@ -6,26 +6,26 @@
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:37:22 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/11 11:58:44 by gdornic          ###   ########.fr       */
+/*   Updated: 2024/03/11 11:26:39 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	FragTrap	fragtrap("Bob3");
+	DiamondTrap	diamondtrap("Bob4");
 
-	fragtrap.attack("Horse");
-	fragtrap.takeDamage(3);
-	fragtrap.beRepaired(2);
-	for (int i = 0; i < 99; i++)
-		fragtrap.attack("Horse");
-	fragtrap.attack("Horse");
-	fragtrap.beRepaired(2);
-	fragtrap.highFivesGuys();
-	fragtrap.takeDamage(100);
-	fragtrap.takeDamage(10);
+	diamondtrap.attack("Horse");
+	diamondtrap.takeDamage(3);
+	diamondtrap.beRepaired(2);
+	for (int i = 0; i < 49; i++)
+		diamondtrap.attack("Horse");
+	diamondtrap.attack("Horse");
+	diamondtrap.beRepaired(2);
+	diamondtrap.highFivesGuys();
+	diamondtrap.guardGate();
+	diamondtrap.whoAmI();
+	diamondtrap.takeDamage(100);
+	diamondtrap.takeDamage(10);
 }
