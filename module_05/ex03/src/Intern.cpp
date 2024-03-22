@@ -6,7 +6,7 @@
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:01:10 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/17 18:46:37 by gdornic          ###   ########.fr       */
+/*   Updated: 2024/03/21 10:58:40 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,23 @@
 
 Intern::Intern()
 {
+	forms[0] = "shrubbery creation";
+	forms[1] = "robotomy request";
+	forms[2] = "presidential pardon";
+	formCreate[0] = &Intern::createShubbery;
+	formCreate[1] = &Intern::createRobotomy;
+	formCreate[2] = &Intern::createPresidential;
 }
 
 Intern::Intern(const Intern &other)
 {
 	(void)other;
+	forms[0] = "shrubbery creation";
+	forms[1] = "robotomy request";
+	forms[2] = "presidential pardon";
+	formCreate[0] = &Intern::createShubbery;
+	formCreate[1] = &Intern::createRobotomy;
+	formCreate[2] = &Intern::createPresidential;
 }
 
 Intern	&Intern::operator=(const Intern &other)
@@ -50,9 +62,6 @@ Form	*Intern::createPresidential(std::string target)
 
 Form	*Intern::makeForm(std::string name, std::string target)
 {
-	std::string			forms[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	Form*				(Intern::*formCreate[])(std::string) = {&Intern::createShubbery, &Intern::createRobotomy, &Intern::createPresidential};
-
 	std::cout << "Intern creates " << name << std::endl;
 	for (int i = 0; i < 3; i++)
 	{

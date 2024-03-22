@@ -6,7 +6,7 @@
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:00:34 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/17 18:36:18 by gdornic          ###   ########.fr       */
+/*   Updated: 2024/03/21 10:49:13 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 class Intern
 {
 	private:
+		std::string			forms[3];
+		Form*				(Intern::*formCreate[3])(std::string);
 	public:
 		//Constructor(s)/Destructor
 		Intern();
