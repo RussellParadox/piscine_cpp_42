@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 14:23:11 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/22 13:04:04 by gdornic          ###   ########.fr       */
+/*   Created: 2024/03/22 13:11:57 by gdornic           #+#    #+#             */
+/*   Updated: 2024/03/22 13:17:53 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#include "Data.hpp"
 
-int	main(int argc, char *argv[])
+Data::Data(): _message("These violent delights have violent ends.")
 {
-	for (int i = 1; i < argc; i++)
-		ScalarConverter::convert(argv[i]);
-	return (0);
+}
+
+Data::Data(const Data &other): _message(other._message)
+{
+}
+
+Data	&Data::operator=(const Data &other)
+{
+	if (this != &other)
+	{
+		_message = other._message;
+	}
+	return (*this);
+}
+
+Data::~Data()
+{
+}
+
+std::string	Data::getMessage(void)
+{
+	return (_message);
 }

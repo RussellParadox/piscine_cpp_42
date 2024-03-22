@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 14:23:11 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/22 13:04:04 by gdornic          ###   ########.fr       */
+/*   Created: 2024/03/22 13:04:19 by gdornic           #+#    #+#             */
+/*   Updated: 2024/03/22 13:17:06 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#ifndef DATA_HPP
+# define DATA_HPP
+# include <string>
 
-int	main(int argc, char *argv[])
+typedef	unsigned int * uintptr_t;
+
+class Data
 {
-	for (int i = 1; i < argc; i++)
-		ScalarConverter::convert(argv[i]);
-	return (0);
-}
+	private:
+		std::string	_message;
+	public:
+		//Constructor(s)/Destructor
+		Data();
+		Data(const Data &other);
+		~Data();
+
+		//Getter
+		std::string	getMessage(void);
+
+		//Operator(s) overload
+		Data	&operator=(const Data &other);
+};
+
+#endif

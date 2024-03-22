@@ -5,17 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdornic <gdornic@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 14:23:11 by gdornic           #+#    #+#             */
-/*   Updated: 2024/03/22 13:04:04 by gdornic          ###   ########.fr       */
+/*   Created: 2024/03/22 12:53:17 by gdornic           #+#    #+#             */
+/*   Updated: 2024/03/22 13:13:27 by gdornic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
+#include "Data.hpp"
 #include <iostream>
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	for (int i = 1; i < argc; i++)
-		ScalarConverter::convert(argv[i]);
+	Data		data;
+	Data		*data_ptr;
+	uintptr_t	ptr;
+
+	ptr = Serializer::serialize(&data);
+	data_ptr = Serializer::deserialize(ptr);
+	if (data_ptr == &data)
+	{
+		std::cout << "Success" << std::endl;
+		std::cout << data_ptr->getMessage() << std::endl;
+	}
+	else
+		std::cout << "Failure" << std::endl;
 	return (0);
 }
